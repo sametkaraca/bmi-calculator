@@ -11,11 +11,11 @@ app.get('/', (req,res) =>{
 
 app.post('/', (req,res)=> { 
 
-let weight = Number(req.body.weight)
-let height = Number(req.body.height)
-let result = height / weight 
+let weight = parseFloat(req.body.weight)
+let height = parseFloat(req.body.height)
+let bmi = weight / (height * height)
 
-res.send("Result " + result)
+res.send("Result " + bmi)
 
 })
 
